@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tag_get_range",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tag_get_range",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

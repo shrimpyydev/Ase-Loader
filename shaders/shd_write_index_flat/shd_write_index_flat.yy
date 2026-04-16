@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_write_index_flat",
+  "name":"shd_write_index_flat",
+  "parent":{
+    "name":"write_shaders",
+    "path":"folders/shaders/write_shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

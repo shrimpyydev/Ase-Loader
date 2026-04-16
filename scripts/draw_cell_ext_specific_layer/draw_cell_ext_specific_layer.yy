@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_cell_ext_specific_layer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_cell_ext_specific_layer",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

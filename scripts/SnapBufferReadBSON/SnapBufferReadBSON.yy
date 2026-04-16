@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SnapBufferReadBSON",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBufferReadBSON",
+  "parent":{
+    "name":"BSON",
+    "path":"folders/SNAP/BSON.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

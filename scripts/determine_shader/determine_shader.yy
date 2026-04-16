@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"determine_shader",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"determine_shader",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SnapBSONRegex",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBSONRegex",
+  "parent":{
+    "name":"BSONExtendedTypes",
+    "path":"folders/SNAP/BSON/BSONExtendedTypes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

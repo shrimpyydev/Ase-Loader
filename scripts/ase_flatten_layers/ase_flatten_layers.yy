@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ase_flatten_layers",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ase_flatten_layers",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

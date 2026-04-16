@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"change_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"change_animation",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

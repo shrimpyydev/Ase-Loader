@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SnapBSONUTCDateTime",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SnapBSONUTCDateTime",
+  "parent":{
+    "name":"BSONExtendedTypes",
+    "path":"folders/SNAP/BSON/BSONExtendedTypes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

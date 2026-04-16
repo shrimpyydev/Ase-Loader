@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"advance_frame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"advance_frame",
+  "parent":{
+    "name":"gmase",
+    "path":"folders/gmase.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
