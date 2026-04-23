@@ -22,7 +22,7 @@ switch(color_mode){
 		var current_buffer = current_cell.pixels;
 			for(var o=0; o<buffer_get_size(current_buffer)*8; o+=32)
 			{
-				vertex_position(new_buff,1+current_cell.x_pos+(o / 32 % current_cell.cell_width)+_struct.width*i,current_cell.y_pos+(o/32 div current_cell.cell_width)+_struct.height*(j-1));
+				vertex_position(new_buff,1+current_cell.x_pos+(o / 32 % current_cell.cell_width)+_struct.width*i,1+current_cell.y_pos+(o/32 div current_cell.cell_width)+_struct.height*(j-1));
 				var r = buffer_read(current_buffer, buffer_u8);
 				var g = buffer_read(current_buffer, buffer_u8);
 				var b = buffer_read(current_buffer, buffer_u8);

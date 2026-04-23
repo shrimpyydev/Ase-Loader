@@ -4,6 +4,11 @@ if(!variable_instance_exists(self,"time_elapse"))
 exit;	
 }
 
+if(!variable_instance_exists(self,"animation_index"))
+{
+animation_index=0;	
+}
+
 time_elapse+=delta_time*0.001*abs(speed_factor);
 
 if(animation==-1)

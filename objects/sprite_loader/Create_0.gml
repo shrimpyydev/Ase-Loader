@@ -1,6 +1,7 @@
 last_chunk=-1; //
 
 test_sprite = load_ase("merchant.aseprite");
+//clipboard_set_text(json_stringify(test_sprite,1));
 equip_test = load_ase("demoman.ase");
 recolor_test = load_ase("merchant_indexed.aseprite");
 ase_set_origin(test_sprite,test_sprite.width/2,test_sprite.height/2);

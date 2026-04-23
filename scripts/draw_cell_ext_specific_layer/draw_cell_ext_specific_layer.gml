@@ -5,9 +5,9 @@ var current_frame = _ase.frames[_index];
 var width = _ase.width;
 var height = _ase.height;
 
-var init_dir = point_direction(0,0,_ase.origin_x*_xscale,_ase.origin_y*_yscale);
+var init_dir = point_direction(0,0,_ase.xoffset*_xscale,_ase.yoffset*_yscale);
 
-var init_dis = point_distance(0,0,_ase.origin_x*_xscale,_ase.origin_y*_yscale);
+var init_dis = point_distance(0,0,_ase.xoffset*_xscale,_ase.yoffset*_yscale);
 
 var offset_x = -lengthdir_x(init_dis,init_dir+angle);
 

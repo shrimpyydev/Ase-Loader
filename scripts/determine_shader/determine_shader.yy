@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"determine_shader",
   "parent":{
-    "name":"gmase",
-    "path":"folders/gmase.yy",
+    "name":"draw functions",
+    "path":"folders/gmase/draw functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

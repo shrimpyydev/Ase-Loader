@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"batch_get_minmax",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"batch_get_minmax",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

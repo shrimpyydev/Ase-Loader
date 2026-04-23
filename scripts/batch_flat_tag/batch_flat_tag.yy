@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"batch_flat_tag",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"batch_flat_tag",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

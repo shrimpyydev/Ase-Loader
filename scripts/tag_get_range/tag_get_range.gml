@@ -6,7 +6,7 @@ return [struct_get(sprite_struct.tags,tag_as_string).from,struct_get(sprite_stru
 }
 else
 {
-show_debug_message(tag_as_string+" not found.");	
+show_debug_message(string(tag_as_string)+" not found.");	
 return -1;
 
 }

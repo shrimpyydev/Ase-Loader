@@ -1,18 +1,11 @@
 if(demo==3 && array_length(gen_sprites)==0)
 {
 batch_begin();
-batch_exploaded_layer_specific_layer(test_sprite,"Merchant");
+layer_set_visibility(test_sprite,"Layer 2",0);
+batch_flat_all_tags(test_sprite,"merchant_sprite");
 
 
 
-
-
-pack_batch();
-
-
-batch_to_surface();
-
-x_shift=0;
-gen_sprites = produce_sprites("demo_sprites");
+gen_sprites = batch_execute("demo_sprites");
 show_debug_message(gen_sprites);
 }

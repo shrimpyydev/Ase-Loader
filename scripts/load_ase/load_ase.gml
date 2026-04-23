@@ -1,6 +1,6 @@
 
 
-function load_ase(_bufferfile,name="",_xorigin=0,_yorigin=0){
+function load_ase(_bufferfile,name="",_xorigin=0,_yorigin=0,json=-1){
 if(name!="")
 {
 var set_name = name;	
@@ -17,8 +17,8 @@ set_name = string_replace(set_name,filename_ext(_bufferfile),"");
 
 var runtime_struct ={
 layers : [],
-origin_x : 0,
-origin_y : 0,
+xoffset : 0,
+yoffset : 0,
 slices : [],
 name : set_name,
 };
@@ -112,6 +112,23 @@ struct_set(ase_system.sprites,set_name,runtime_struct);
 var handle = struct_get(ase_system.sprites,set_name);
 
 ase_set_origin(handle,_xorigin,_yorigin)
+if(json!=-1)
+{
+var json_data = buffer_load(json);
+var json_string = buffer_read(json_data,buffer_string);
+var parsed = json_parse(json_string);
+buffer_delete(json_data);
+var names = struct_get_names(parsed);
+
+for(var j=0; j<array_length(names); j++)
+	{
+	struct_set(handle,names[j],struct_get(parsed,names[j]));	
+		
+		
+	}
+
+
+}
 
 return handle;
 

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ase_set_bbox_kind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ase_set_bbox_kind",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

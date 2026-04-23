@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pack_batch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pack_batch",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

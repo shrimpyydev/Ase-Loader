@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_cell_ext",
   "parent":{
-    "name":"gmase",
-    "path":"folders/gmase.yy",
+    "name":"draw functions",
+    "path":"folders/gmase/draw functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -9,7 +9,7 @@ for(var i=1; i<array_length(current_frame); i++)
 	{
 	continue;	
 	}
-	draw_surface_part(_ase.surface,width*_index,height*(i-1),width,height,_x-_ase.origin_x,_y-_ase.origin_y);
+	draw_surface_part(_ase.surface,width*_index,height*(i-1),width,height,_x-_ase.xoffset,_y-_ase.yoffset);
 	
 	
 	}

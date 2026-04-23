@@ -17,8 +17,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Ase Loader",
-    "path":"Ase Loader.yyp",
+    "name":"Ase_loader",
+    "path":"Ase_loader.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

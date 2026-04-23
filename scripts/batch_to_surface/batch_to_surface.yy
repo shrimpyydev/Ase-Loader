@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"batch_to_surface",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"batch_to_surface",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

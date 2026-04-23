@@ -5,7 +5,7 @@ demo=0;
 }
 else if(demo<0)
 {
-demo=2;	
+demo=3;	
 }
 
 

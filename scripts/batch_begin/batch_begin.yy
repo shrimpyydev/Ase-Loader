@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"generate_sprites",
+  "%Name":"batch_begin",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"generate_sprites",
+  "name":"batch_begin",
   "parent":{
-    "name":"ase loader system",
-    "path":"folders/gmase/ase loader system.yy",
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

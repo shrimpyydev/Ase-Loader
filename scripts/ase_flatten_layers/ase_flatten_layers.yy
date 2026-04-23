@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ase_flatten_layers",
   "parent":{
-    "name":"gmase",
-    "path":"folders/gmase.yy",
+    "name":"ase loader system",
+    "path":"folders/gmase/ase loader system.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

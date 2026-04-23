@@ -3,7 +3,7 @@ var current_frame = _ase.frames[_index];
 var width = _ase.width;
 var height = _ase.height;
 
-	draw_surface_part(_ase.flat_surf,width*_index,0,width,height,_x-_ase.origin_x,_y-_ase.origin_y);
+	draw_surface_part(_ase.flat_surf,width*_index,0,width,height,_x-_ase.xoffset,_y-_ase.yoffset);
 	
 	
 	

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"produce_sprites",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"produce_sprites",
+  "parent":{
+    "name":"batch_functions",
+    "path":"folders/gmase/batch_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
