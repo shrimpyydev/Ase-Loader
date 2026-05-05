@@ -1,7 +1,7 @@
 draw_text_colour(32,32,"Use O and P to change demo",c_white,c_white,c_white,c_white,1);
 if(demo=0)
 {
-if(!surface_exists(ase_system.sprite_surf))
+//if(!surface_exists(ase_system.sprite_surf))
 {
 var message_text = "The top scrolling surface is the parsed .ase exploaded with all information expressed.\nAt the bottom, the image is flattened and layers with the visibility booleen set to false are not rendered.\nThe sprite in the middle of the screen is rendered dynamically, use left/right arrows to change animation.\n";
 if(struct_exists(test_sprite,"tags"))

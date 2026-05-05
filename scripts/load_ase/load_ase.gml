@@ -21,9 +21,16 @@ xoffset : 0,
 yoffset : 0,
 slices : [],
 name : set_name,
+user_data : [],
 };
-
+if(is_string(_bufferfile))
+{
 var buf = buffer_load(_bufferfile);
+}
+else
+{
+var buf = _bufferfile;	
+}
 
 // --- HEADER ---
 buffer_seek(buf, buffer_seek_start, 0);

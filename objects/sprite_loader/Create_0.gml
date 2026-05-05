@@ -1,7 +1,7 @@
-last_chunk=-1; //
+ //
 
-test_sprite = load_ase("merchant.aseprite");
-//clipboard_set_text(json_stringify(test_sprite,1));
+test_sprite = load_ase_serialized("satyr.gmase");
+
 equip_test = load_ase("demoman.ase");
 recolor_test = load_ase("merchant_indexed.aseprite");
 ase_set_origin(test_sprite,test_sprite.width/2,test_sprite.height/2);
@@ -27,11 +27,11 @@ else
 pal=array_create(255*4,0);
 }
 
-ase_flatten_layers(test_sprite,pal);
-ase_flatten_layers(recolor_test,recolor_pal);
+ase_flatten_layers(test_sprite);
+ase_flatten_layers(recolor_test);
 ase_flatten_layers(equip_test);
 x_shift=0;
-
+clipboard_set_text(json_stringify(test_sprite,1));
 
 gen_index=1;
 gen_sprites=[];

@@ -1,54 +1,14 @@
-function load_ase_serialized(_buffer,pal=[],flatten=0){
+function load_ase_serialized(_bufferfile,name="",_xorigin=0,_yorigin=0,json=-1){
 
-var compress_buff = buffer_load(_buffer);
+var my_buff=buffer_load(_bufferfile);
 
-var my_sprite = buffer_decompress(compress_buff);
+var buff_string = buffer_read(my_buff,buffer_string);
 
-buffer_delete(compress_buff);
+var decode = buffer_base64_decode(buff_string);
 
-var new_struct = SnapBufferReadBinary(my_sprite,0);
+buffer_delete(my_buff);
 
+var decoded_sprite = load_ase(decode,name,_xorigin,_yorigin,json);
 
-
-var new_buff = buffer_base64_decode(new_struct.vert_buff);
-
-
-
-if(new_struct.color_depth==32)
-{
-
-var vert_buff = vertex_create_buffer_from_buffer(new_buff, global.ase_rgba);
-
-}
-else if(new_struct.color_depth==16)
-{
-var vert_buff = vertex_create_buffer_from_buffer(new_buff, global.ase_greyscale);	
-}
-else
-{
-var vert_buff = vertex_create_buffer_from_buffer(new_buff, global.ase_index);	
-}
-
-buffer_delete(new_buff);
-
-new_struct.vert_buff = vert_buff;
-clipboard_set_text(json_stringify(new_struct,1));
-bake_surface(new_struct);
-
-if(flatten==1)
-{
-ase_flatten_layers(new_struct,pal);	
-}
-
-if(struct_exists(ase_system.sprites,new_struct.name))
-{
-unload_sprite(struct_get(ase_system.sprites,new_struct.name));	
-}
-
-struct_set(ase_system.sprites,new_struct.name,new_struct);
-
-
-	
-return 	struct_get(ase_system.sprites,new_struct.name);
-
+return decoded_sprite;
 }

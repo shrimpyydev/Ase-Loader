@@ -22,7 +22,13 @@ switch(color_mode){
 		var current_buffer = current_cell.pixels;
 			for(var o=0; o<buffer_get_size(current_buffer)*8; o+=32)
 			{
-				vertex_position(new_buff,1+current_cell.x_pos+(o / 32 % current_cell.cell_width)+_struct.width*i,1+current_cell.y_pos+(o/32 div current_cell.cell_width)+_struct.height*(j-1));
+				if(1+current_cell.y_pos+(o/32 div current_cell.cell_width)>_struct.height)
+				{
+				break;	
+				
+				}
+				
+				vertex_position(new_buff,1+current_cell.x_pos+(o / 32 % current_cell.cell_width)+_struct.width*i,1+current_cell.y_pos+(o/32 div current_cell.cell_width)+_struct.height*current_cell.layer_index);
 				var r = buffer_read(current_buffer, buffer_u8);
 				var g = buffer_read(current_buffer, buffer_u8);
 				var b = buffer_read(current_buffer, buffer_u8);
@@ -50,7 +56,13 @@ switch(color_mode){
 		var current_buffer = current_cell.pixels;
 			for(var o=0; o<buffer_get_size(current_buffer)*8; o+=16)
 			{
-				vertex_position(new_buff,1+current_cell.x_pos+(o / 16 % current_cell.cell_width)+_struct.width*i,current_cell.y_pos+(o/16 div current_cell.cell_width)+_struct.height*(j-1));
+				if(1+current_cell.y_pos+(o/16 div current_cell.cell_width)>_struct.height)
+				{
+				break;	
+				
+				}
+				
+				vertex_position(new_buff,1+current_cell.x_pos+(o / 16 % current_cell.cell_width)+_struct.width*i,current_cell.y_pos+(o/16 div current_cell.cell_width)+_struct.height*current_cell.layer_index);
 				var v = buffer_read(current_buffer, buffer_u8);
 				var a = buffer_read(current_buffer, buffer_u8);
 				
@@ -77,12 +89,17 @@ switch(color_mode){
 		var current_buffer = current_cell.pixels;
 			for(var o=0; o<buffer_get_size(current_buffer)*8; o+=8)
 			{
-				vertex_position(new_buff,1+current_cell.x_pos+(o / 8 % current_cell.cell_width)+_struct.width*i,current_cell.y_pos+(o/8 div current_cell.cell_width)+_struct.height*(j-1));
+				if(1+current_cell.y_pos+(o/8 div current_cell.cell_width)>_struct.height)
+				{
+				//break;	
+				}
+				
+				vertex_position(new_buff,1+current_cell.x_pos+(o / 8 % current_cell.cell_width)+_struct.width*i,current_cell.y_pos+(o/8 div current_cell.cell_width)+_struct.height*current_cell.layer_index);
 				var index = buffer_read(current_buffer, buffer_u8);
 				
 				
 				vertex_float1(new_buff,index);
-				//show_debug_message("index sanity check: "+string(index));
+				//w("index sanity check: "+string(index));
 				
 			}
 			buffer_delete(current_buffer);

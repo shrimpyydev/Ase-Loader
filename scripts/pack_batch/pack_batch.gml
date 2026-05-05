@@ -104,7 +104,7 @@ while(array_length(canvas.placed_cells)<array_length(names))
 	{
 		canvas.placed_cells=[];
 		array_resize(canvas.empty_cells,1);
-		if(canvas.width==canvas.height)
+		if(canvas.width<=canvas.height)
 		{
 		canvas.width += min_width;	
 		}

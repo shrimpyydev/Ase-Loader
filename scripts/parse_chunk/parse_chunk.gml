@@ -2,7 +2,7 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 {
     buffer_seek(buf, buffer_seek_start, frame_start + 16);
 	var iteration = 1;
-	
+	var last_chunk = -1;
     while (buffer_tell(buf) < frame_end)
     {
         //show_debug_message("Parsing chunk: "+string([frame_start,frame_end]));
@@ -56,7 +56,8 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 		struct_remove(layer_struct,"flags");
 
 		array_push(_struct.layers,layer_struct);
-		buffer_seek(buf,buffer_seek_start,chunk_start+chunk_size);
+		last_chunk=_struct.layers[array_length(_struct.layers)-1];
+		
 		break;	
 		
 		
@@ -75,8 +76,7 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 		{
 		buffer_read(buf,buffer_u8);	
 		}
-		var cell_width = buffer_read(buf,buffer_u16);
-		var cell_height = buffer_read(buf,buffer_u16);
+		
 		
 		var chunk_struct = {	
 		layer_index : layer_index,
@@ -85,13 +85,44 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 		opacity : opacity,
 		cel_type : cel_type,
 		z_index : z_index,
-		cell_width : cell_width,
-		cell_height : cell_height,
+		
 		};
 		
-		if(cel_type==2)
+		if(cel_type==1)
 		{
-		var extracted_cell = extract_uncompressed_cell(buf,buffer_tell(buf),chunk_start+chunk_size,_struct.color_depth,cell_width,cell_height);
+		chunk_struct.link_cell = buffer_read(buf,buffer_u16);	
+		show_debug_message("linking cell: "+string(chunk_struct.link_cell));
+		with(chunk_struct)
+		{
+		   
+			struct_set(self,"source_cell",array_filter(_struct.frames[link_cell],function(element,index){
+			if(!is_struct(element)){return false}
+			return element.layer_index == layer_index;
+			
+			}));
+		}
+		var source_cell = chunk_struct.source_cell;
+		struct_remove(chunk_struct,"source_cell");
+		struct_remove(chunk_struct,"link_cell");
+		iteration++;
+		
+		chunk_struct.pixels=buffer_create(buffer_get_size(source_cell[0].pixels),buffer_fixed,1);
+		buffer_copy(source_cell[0].pixels, 0, buffer_get_size(source_cell[0].pixels), chunk_struct.pixels, 0);
+		var copy_struct = variable_clone(source_cell[0]);
+		copy_struct.pixels=chunk_struct.pixels;
+		array_push(_struct.frames[_frame],copy_struct);	
+		
+		last_chunk=_struct.frames[_frame][array_length(_struct.frames[_frame])-1];
+		chunk_struct=undefined;
+		
+		}
+		else if(cel_type==2)
+		{
+		var cell_width = buffer_read(buf,buffer_u16);
+		var cell_height = buffer_read(buf,buffer_u16);
+		chunk_struct.cell_width=cell_width;
+		chunk_struct.cell_height=cell_height;
+		var extracted_cell = extract_compressed_cell(buf,buffer_tell(buf),chunk_start+chunk_size);
 		chunk_struct.pixels = extracted_cell;
 		iteration++;
 		
@@ -169,6 +200,8 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 		height : slice_height,
 		});
 		
+		last_chunk=_struct.slices[array_length(_struct.slices)-1];
+		
 		break;	
 		
 		case global._chunktypes.palette_chunk:
@@ -201,6 +234,21 @@ function parse_chunk(buf, frame_start, frame_end,_struct,_frame)
 		
 		show_debug_message("parsed a palette of: "+string(_struct.palette.range));
 		break;
+		
+		case global._chunktypes.user_chunk:
+		var user_data = parse_user_data(buf);
+
+		if (is_struct(last_chunk))
+		{
+			last_chunk.user_data = user_data;
+		}
+		else
+		{
+			array_push(_struct.user_data,user_data);
+		}
+		break;
+		
+		
 		
 		}
 		

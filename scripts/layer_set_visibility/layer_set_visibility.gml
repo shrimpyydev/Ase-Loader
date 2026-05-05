@@ -20,7 +20,7 @@ exit;
 }
 else
 {
-layers[layer_index].visible=bool(_is_visible);	
+layers[layer_index].visible=_is_visible;	
 if(struct_exists(_struct,"flat_surf"))
 	{
 		ase_flatten_layers(_struct);
