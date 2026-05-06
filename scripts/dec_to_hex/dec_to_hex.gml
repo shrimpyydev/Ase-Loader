@@ -1,15 +1,11 @@
 /// @func   dec_to_hex(dec, len)
-///
 /// @desc   Returns a given value as a string of hexadecimal digits.
 ///         Hexadecimal strings can be padded to a minimum length.
 ///         Note: If the given value is negative, it will
 ///         be converted using its two's complement form.
-///
 /// @param  {real}      dec         integer
 /// @param  {real}      [len=1]     minimum number of digits
-///
 /// @return {string}    hexadecimal digits
-///
 /// GMLscripts.com/license
 
 function dec_to_hex(dec, len = 1)

@@ -1,11 +1,7 @@
 /// @func   hex_to_dec(hex)
-///
 /// @desc   Returns an integer converted from an hexadecimal string.
-///
 /// @param  {string}    hex         hexadecimal digits
-///
 /// @return {real}      positive integer
-///
 /// GMLscripts.com/license
 
 function hex_to_dec(hex) 
