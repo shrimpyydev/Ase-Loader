@@ -1,19 +1,16 @@
-function delete_texturegroup(_texturegroup){
+function delete_texturegroup(_texturegroup)
+{
+	var sprites = texturegroup_get_sprites(_texturegroup);
 
-
-var sprites = texturegroup_get_sprites(_texturegroup);
-
-for(var i=0; i<array_length(sprites); i++)
+	for (var i = 0; i < array_length(sprites); i++)
 	{
-	sprite_delete(sprites[i]);		
+		sprite_delete(sprites[i]);
 	}
 
-texturegroup_delete(_texturegroup);
-var buff = struct_get(ase_system.texture_buffers,_texturegroup);
+	texturegroup_delete(_texturegroup);
+	var buff = struct_get(ase_system.texture_buffers, _texturegroup);
 
-buffer_delete(buff);
+	buffer_delete(buff);
 
-
-
-struct_remove(ase_system.texture_buffers,_texturegroup);
+	struct_remove(ase_system.texture_buffers, _texturegroup);
 }

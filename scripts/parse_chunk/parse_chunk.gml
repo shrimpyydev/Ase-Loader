@@ -88,7 +88,7 @@ function parse_chunk(buf, frame_start, frame_end, _struct, _frame)
 				if (cel_type == 1)
 				{
 					chunk_struct.link_cell = buffer_read(buf, buffer_u16);
-					show_debug_message("linking cell: " + string(chunk_struct.link_cell));
+					//show_debug_message("linking cell: " + string(chunk_struct.link_cell));
 
 					with (chunk_struct)
 					{
@@ -233,7 +233,7 @@ function parse_chunk(buf, frame_start, frame_end, _struct, _frame)
 
 				_struct.palette.data = palette_contents;
 
-				show_debug_message("parsed a palette of: " + string(_struct.palette.range));
+				//show_debug_message("parsed a palette of: " + string(_struct.palette.range));
 				break;
 
 			case global._chunktypes.user_chunk:

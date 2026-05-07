@@ -108,7 +108,7 @@ function parse_user_data(_buf)
 						break;
 
 					default:
-						show_debug_message("Unhandled user data property type: " + dec_to_hex(prop_type));
+						show_debug_message("parse_user_data(): unhandled user data property type: " + dec_to_hex(prop_type));
 						prop_value = undefined;
 						break;
 				}

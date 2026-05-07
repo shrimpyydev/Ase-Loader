@@ -7,5 +7,5 @@ batch_flat_all_tags(test_sprite,"merchant_sprite");
 
 
 gen_sprites = batch_execute("demo_sprites");
-show_debug_message(gen_sprites);
+//show_debug_message(gen_sprites);
 }

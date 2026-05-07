@@ -6,7 +6,7 @@ function tag_get_range(sprite_struct, tag_as_string)
 	}
 	else
 	{
-		show_debug_message(string(tag_as_string) + " not found.");
+		show_debug_message("tag_get_range(): " string(tag_as_string) + " not found.");
 		return -1;
 	}
 }

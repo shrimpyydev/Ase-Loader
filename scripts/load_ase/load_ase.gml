@@ -66,8 +66,8 @@ function load_ase(_bufferfile, name = "", _xorigin = 0, _yorigin = 0, json = -1)
 	buffer_seek(buf, buffer_seek_start, 128);
 
 	// Debug
-	show_debug_message("Frames: " + string(frame_count));
-	show_debug_message("Size: " + string(width) + "x" + string(height));
+	//show_debug_message("Frames: " + string(frame_count));
+	//show_debug_message("Size: " + string(width) + "x" + string(height));
 
 	// --- FRAME LOOP ---
 	for (var i = 0; i < frame_count; i++)
@@ -92,7 +92,7 @@ function load_ase(_bufferfile, name = "", _xorigin = 0, _yorigin = 0, json = -1)
 
 		if (frame_magic != $F1FA)
 		{
-			show_debug_message("Bad frame at " + string(i));
+			show_debug_message("load_ase(): bad frame at " + string(i));
 			break;
 		}
 

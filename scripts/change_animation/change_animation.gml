@@ -2,7 +2,7 @@ function change_animation(_struct,_string,_preserve_index=0){
 //provide the name of an animation 
 if(!struct_exists(_struct.tags,_string))
 {
-show_debug_message("animation not found");
+show_debug_message("change_animation(): animation not found");
 exit;	
 	
 }
