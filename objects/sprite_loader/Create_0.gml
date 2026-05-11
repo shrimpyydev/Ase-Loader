@@ -1,4 +1,4 @@
-test_sprite = load_ase_serialized("satyr.gmase");
+test_sprite = load_ase("merchant.aseprite");
 equip_test = load_ase("demoman.ase");
 recolor_test = load_ase("merchant_indexed.aseprite");
 
