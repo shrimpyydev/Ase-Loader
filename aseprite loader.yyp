@@ -72,7 +72,6 @@
     {"id":{"name":"batch_layer_general_tag","path":"scripts/batch_layer_general_tag/batch_layer_general_tag.yy",},},
     {"id":{"name":"batch_layer_general","path":"scripts/batch_layer_general/batch_layer_general.yy",},},
     {"id":{"name":"batch_to_surface","path":"scripts/batch_to_surface/batch_to_surface.yy",},},
-    {"id":{"name":"build_animation_struct","path":"scripts/build_animation_struct/build_animation_struct.yy",},},
     {"id":{"name":"change_animation","path":"scripts/change_animation/change_animation.yy",},},
     {"id":{"name":"dec_to_hex","path":"scripts/dec_to_hex/dec_to_hex.yy",},},
     {"id":{"name":"delete_texturegroup","path":"scripts/delete_texturegroup/delete_texturegroup.yy",},},
