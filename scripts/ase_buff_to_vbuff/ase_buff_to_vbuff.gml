@@ -107,6 +107,6 @@ function ase_buff_to_vbuff(_struct)
 	}
 
 	vertex_end(new_buff);
-	// vertex_freeze(new_buff);
+	vertex_freeze(new_buff);
 	return new_buff;
 }

@@ -1,6 +1,6 @@
-test_sprite = load_ase("merchant.aseprite");
+test_sprite = load_ase("fish.aseprite");
 equip_test = load_ase("demoman.ase");
-recolor_test = load_ase("merchant_indexed.aseprite");
+recolor_test = load_ase("fish_indexed.aseprite");
 
 ase_set_origin(test_sprite, test_sprite.width / 2, test_sprite.height / 2);
 ase_set_origin(equip_test, equip_test.width / 2, equip_test.height / 2);
@@ -8,6 +8,8 @@ ase_set_origin(recolor_test, recolor_test.width / 2, recolor_test.height / 2);
 
 recolor_pal = ase_sprite_to_pal(test_palette, 0);
 animation = -1;
+
+clipboard_set_text(json_stringify(test_sprite,1));
 
 if (struct_exists(test_sprite, "tags") == true)
 {

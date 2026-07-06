@@ -11,7 +11,7 @@ if (demo == 0)
 			message_text += "Animation: " + animation + "\nFrame: " + string(ase_index - struct_get(test_sprite.tags, animation).from);
 		}
 
-		draw_text_colour(room_width / 2 - 512, room_height / 2 - 96, message_text, c_white, c_white, c_white, c_white, 1);
+		draw_text_colour(room_width / 2 - 512, room_height / 2 , message_text, c_white, c_white, c_white, c_white, 1);
 	}
 }
 else if (demo == 1)
