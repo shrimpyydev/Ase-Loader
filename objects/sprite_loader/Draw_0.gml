@@ -4,8 +4,8 @@ if (demo == 0)
 	draw_surface(test_sprite.surface, x_shift, 0);
 	draw_surface(test_sprite.surface, x_shift + surface_get_width(test_sprite.surface) - 1, 0);
 
-	//draw_cell_ext(test_sprite, ase_index, room_width / 2, room_height / 2 + 128, 4, 4, direction);
-    draw_cell_ext(test_sprite, ase_index, room_width / 2, room_height / 2 , 1, 1, direction);
+	draw_cell_ext(test_sprite, ase_index, room_width / 2, room_height / 2 + 128, 4, 4, direction,true);
+    //draw_cell_ext(test_sprite, ase_index, room_width / 2, room_height / 2 , 1, 1, direction);
 	shader_reset();
 
 	draw_surface(test_sprite.flat_surf, x_shift, room_height - test_sprite.height);

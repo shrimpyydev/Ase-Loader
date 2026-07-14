@@ -1,6 +1,6 @@
-function draw_cell_ext(_ase, _index, _x, _y, _xscale, _yscale, angle)
+function draw_cell_ext(_ase, _index, _x, _y, _xscale, _yscale, angle, z_aware=false)
 {
-	var current_frame = _ase.frames[_index];
+	var layer_count = array_length(_ase.layers);
 	var width = _ase.width;
 	var height = _ase.height;
 
@@ -9,17 +9,48 @@ function draw_cell_ext(_ase, _index, _x, _y, _xscale, _yscale, angle)
 
 	var offset_x = -lengthdir_x(init_dis, init_dir + angle);
 	var offset_y = -lengthdir_y(init_dis, init_dir + angle);
-    
-	for (var i = 1; i < array_length(current_frame); i++)
+    var current_depth = gpu_get_depth();
+	
+	for (var i = 0; i < layer_count; i++)
 	{
-		var layer_ref = _ase.layers[current_frame[i].layer_index];
+		var current_layer = _ase.layers[i];
 
-		if (layer_ref.visible == false)
+		if (current_layer.visible == false)
 		{
-			//continue;
+			continue;
 		}
-
-		//draw_surface_general(_ase.surface, width * _index, height * (i - 1), width, height, _x + offset_x, _y + offset_y, _xscale, _yscale, angle, c_white, c_white, c_white, c_white, 1);
-        draw_surface_general(_ase.surface, width * _index, height * (i - 1), width, height, _x + offset_x, _y + offset_y + height * _yscale *(i-1), _xscale, _yscale, angle, c_white, c_white, c_white, c_white, 1);
+		if(bool(z_aware) == true)
+		{
+			var temp_struct = {
+			_index : _index,	
+			layer_index : i,	
+			};
+			
+			with(temp_struct)
+			{
+			current_cell = array_find_index(_ase.frames[_index],function(_element,_index){
+				var is_right = false;
+				if(is_struct(_element))
+					{
+						if(layer_index == _element.layer_index)
+						{
+							is_right = true;	
+						}
+					}
+				return is_right;
+			});
+		}
+		if(temp_struct.current_cell!=-1)
+		{
+			gpu_set_depth(_ase.frames[_index][temp_struct.current_cell].z_index);	
+			
+		}
+		}
+		draw_surface_general(_ase.surface, width * _index, height * i, width, height, _x + offset_x, _y + offset_y, _xscale, _yscale, angle, c_white, c_white, c_white, c_white, 1);
+        gpu_set_depth(current_depth);
 	}
+	
+	
+	
+	
 }

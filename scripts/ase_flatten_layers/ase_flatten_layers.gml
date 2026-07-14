@@ -27,7 +27,10 @@ function ase_flatten_layers(_struct)
 	{
 		shader_set(shd_write_greyscale_flat);
 	}
-
+		
+		
+		
+		
 	for (var i = 0; i < array_length(_struct.layers); i++)
 	{
 		var current_layer = _struct.layers[i];

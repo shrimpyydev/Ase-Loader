@@ -31,7 +31,7 @@ ase_flatten_layers(recolor_test);
 ase_flatten_layers(equip_test);
 
 x_shift = 0;
-clipboard_set_text(json_stringify(test_sprite, 1));
+clipboard_set_text(json_stringify(ase_system, 1));
 
 gen_index = 1;
 gen_sprites = [];

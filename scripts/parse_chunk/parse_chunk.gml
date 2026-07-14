@@ -82,7 +82,7 @@ function parse_chunk(buf, frame_start, frame_end, _struct, _frame)
 					y_pos : y_pos,
 					opacity : opacity,
 					cel_type : cel_type,
-					z_index : z_index,
+					z_index : -z_index,
 				};
 
 				if (cel_type == 1)

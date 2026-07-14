@@ -10,15 +10,17 @@ function draw_cell_ext_specific_layer(_ase, _index, _layername, _x, _y, _xscale,
 	var offset_x = -lengthdir_x(init_dis, init_dir + angle);
 	var offset_y = -lengthdir_y(init_dis, init_dir + angle);
 
-	for (var i = 1; i < array_length(current_frame); i++)
+	for (var i = 0; i < layer_count; i++)
 	{
-		var layer_ref = _ase.layers[current_frame[i].layer_index];
+		var current_layer = _ase.layers[i];
 
-		if (layer_ref.visible == false || layer_ref.layer_name != _layername)
+		if (current_layer.visible == false || _ase.layer_name != _layername)
 		{
 			continue;
 		}
-
-		draw_surface_general(_ase.surface, width * _index, height * (i - 1), width, height, _x + offset_x, _y + offset_y, _xscale, _yscale, angle, c_white, c_white, c_white, c_white, 1);
+		
+		
+		draw_surface_general(_ase.surface, width * _index, height * i, width, height, _x + offset_x, _y + offset_y, _xscale, _yscale, angle, c_white, c_white, c_white, c_white, 1);
+        
 	}
 }
